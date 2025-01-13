@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background-color: #111;
+    color: #b90505;
+    padding: 10px 50px;
+    border-bottom: 1px solid #f5f5f5;
+}
+header h1 {
+    font-size: 36px;
+}
+main {
+    background-color: #f6f6f6;
+    color: #333;
+    padding: 20px 50px;
+}
+section {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #333;
+}
+.intro h2,
+.ingredients h2,
+.steps h2 {
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.intro p,
+.step p {
+    width: 600px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.ingredients ul {
+    padding-left: 30px;
+}
+.ingredients ul li {
+    margin-bottom: 5px;
+}
+.step {
+    margin-bottom: 30px;
+}
+.step h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.step p {
+    padding-left: 30px;
+}
+footer {
+    background-color: #111;
+    color: #b90505;
+    padding: 20px 50px;
+    text-align: center;
+    border-top: 1px solid #f5f5f5;
+}
+footer p {
+    font-size: 14px;
+}
