@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  Arial, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(223, 222, 222);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(155, 154, 154);
+    border-radius: 5px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    background-color: #ffffff;
+    width: 400px;
+    height: 450px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 20px 40px;
+}
+
+h1 {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 34px;
+}
+
+.add-tasks {
+    height: 40px;
+    margin-bottom: 30px;
+    border: 2px solid rgb(204, 202, 202);
+    border-radius: 5px;
+    position: relative;
+}
+
+.add-tasks input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding: 0 80px 0 10px;
+    color: rgb(155, 154, 154);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.add-tasks #add {
+    width: 70px;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #65c769;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.add-tasks input::placeholder {
+    color: rgb(155, 154, 154);
+}
+
+.view-tasks {
+    height: calc(100% - (40px + 40px + 20px + 30px));
+    padding-right: 10px;
+    overflow-y: auto;
+}
+
+.view-tasks ul {
+    list-style: none;
+}
+
+.view-tasks ul li {
+    border: 1px solid rgb(155, 154, 154);
+    border-radius: 5px;
+    font-size: 18px;
+    color: rgb(155, 154, 154);
+    padding: 8px 5px;
+    margin-bottom: 5px;
+}
+
+#error {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: -25px;
+    color: red;
+    z-index: 2;
+}

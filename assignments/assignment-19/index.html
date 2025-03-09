@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>My To-Do App</h1>
+        <div class="add-tasks">
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <button type="submit" id="add">Add</button>
+            <div id="error">
+                
+            </div>
+        </div>
+        <div class="view-tasks">
+            <ul id="task-list">
+                
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let tasks = [];
+        let input = document.getElementById("task-input");
+        let btn = document.getElementById("add");
+        let taskList = document.getElementById("task-list");
+        let error = document.getElementById("error");
+
+        btn.addEventListener("click", () => {
+            const value = input.value.trim();
+            if(!value) {
+                error.innerHTML = "Please fill the input field";
+            } else {
+                tasks.push(value);
+                taskList.innerHTML = "";
+                for (const index in tasks) {
+                    const element = tasks[index];
+                    taskList.innerHTML = taskList.innerHTML + `<li>${parseInt(index) + 1} : ${element}</li>`;
+                };
+                input.value = "";
+            };
+        });
+
+        input.addEventListener("focus", () => {
+            error.innerHTML = "";
+        });
+    </script>
+</body>
+</html>
