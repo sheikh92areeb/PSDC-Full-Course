@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
         body {
             width: 100vw;
@@ -18,19 +19,25 @@
             align-items: center;
             background-color: #f1f1f1;
         }
-        .counter-container {
+        .main-container {
             width: 400px;
-            height: 200px;
+            height: 230px;
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        .main-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .counter-container {
+            height: 130px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
         .counter-display {
-            background-color: red;
             text-align: center;
             font-size: 44px;
         }
@@ -47,30 +54,73 @@
             font-weight: 600;
             cursor: pointer;
             border-radius: 5px;
+            transition: all 0.3s ease-in-out;
         }
         #decrement {
             background-color: #f2796f;
         }
+        #decrement:hover {
+            background-color: #f34f40;
+            transform: scale(1.01);
+            transform-origin: center;
+            box-shadow: 0 0 5px #f2796f;
+        }
         #reset {
             background-color: #fbae42;
+        }
+        #reset:hover {
+            background-color: #f06f19;
+            transform: scale(1.01);
+            transform-origin: center;
+            box-shadow: 0 0 5px #fbae42;
         }
         #increment {
             background-color: #64a768;
         }
+        #increment:hover {
+            background-color: #33a73b;
+            transform: scale(1.01);
+            transform-origin: center;
+            box-shadow: 0 0 5px #64a768;
+        }
     </style>
 </head>
 <body>
-    <div class="counter-container">
-        <h1 class="counter-display">0</h1>
-        <div class="counter-btns">
-            <button id="decrement">Decrement</button>
-            <button id="reset">Reset</button>
-            <button id="increment">Increment</button>
+    <div class="main-container">
+        <h1>Counter App</h1>
+        <div class="counter-container">
+            <h2 class="counter-display" id="counter"></h2>
+            <div class="counter-btns">
+                <button id="decrement">Decrement</button>
+                <button id="reset">Reset</button>
+                <button id="increment">Increment</button>
+            </div>
         </div>
     </div>
-
     <script>
-        
+
+        let init = 0
+        let counter = document.getElementById("counter");
+        counter.innerHTML = init
+
+        document.getElementById("decrement").addEventListener("click" , () => {
+            console.log("clicked on Decrement")
+            init -= 1
+            counter.innerHTML = init;
+        })
+
+        document.getElementById("reset").addEventListener("click" , () => {
+            console.log("clicked on Reset")
+            init = 0
+            counter.innerHTML = init;
+        })
+
+        document.getElementById("increment").addEventListener("click" , () => {
+            console.log("clicked on Increment")
+            init += 1
+            counter.innerHTML = init;
+        })
+
     </script>
 </body>
 </html>
