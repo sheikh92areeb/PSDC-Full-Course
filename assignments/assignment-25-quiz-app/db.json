@@ -1,0 +1,53 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "question": "Which language was used to create Facebook?",
+      "options": [
+        "Python",
+        "French",
+        "JavaScript",
+        "PHP"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "2",
+      "question": "What is the capital of France?",
+      "options": [
+        "Berlin",
+        "Madrid",
+        "Paris",
+        "Rome"
+      ],
+      "correct": 2
+    }
+  ],
+  "users": [
+    {
+      "id": "cef3",
+      "name": "Areeb",
+      "score": 0
+    },
+    {
+      "id": "ab02",
+      "name": "Areeb",
+      "score": 20
+    },
+    {
+      "id": "6840",
+      "name": "Ahmed",
+      "score": 10
+    },
+    {
+      "id": "870e",
+      "name": "Ahmed Alvi",
+      "score": 20
+    },
+    {
+      "id": "91f0",
+      "name": "uzair",
+      "score": 20
+    }
+  ]
+}
