@@ -13,7 +13,7 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
     color: white;
-    text-align: center;
+    
 }
 
 .weather-app {
@@ -24,6 +24,7 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 input {
