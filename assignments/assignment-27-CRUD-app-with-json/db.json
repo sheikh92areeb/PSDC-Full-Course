@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "81bd",
+      "name": "Muhammad Areeb",
+      "email": "areeb@gmail.com"
+    },
+    {
+      "id": "757e",
+      "name": "Dawood",
+      "email": "dawood@gmail.com"
+    },
+    {
+      "id": "4acb",
+      "name": "Ali Khan",
+      "email": "ali@gmail.com"
+    }
+  ]
+}
