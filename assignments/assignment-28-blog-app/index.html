@@ -3,33 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog App</title>
+    <title>Blogs Arena</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utilities.css">
 </head>
 <body>
-    <nav class="navbar">
-        <h1>My Blog</h1>
-    </nav>
-    
+    <header class="container flex justify-between items-center">
+        <div class="logo">
+            <h1>Blogs Arena</h1>
+        </div>
+        <nav>
+            <ul class="flex">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Latest</a></li>
+                <li><a href="#">Category</a></li>
+                <li><a href="#">My Posts</a></li>
+            </ul>
+        </nav>
+    </header>
     <main class="container">
-        <section id="blog-list"></section>
-        
-        <section id="blog-details" class="hidden">
-            <h2 id="post-title"></h2>
-            <p id="post-content"></p>
-            <button onclick="goBack()">Back</button>
-        </section>
-        
-        <section id="add-blog">
-            <h2>Add a New Blog</h2>
-            <form id="blog-form">
-                <input type="text" id="title" placeholder="Title" required>
-                <textarea id="content" placeholder="Write your blog here..." required></textarea>
-                <button type="submit">Add Blog</button>
-            </form>
-        </section>
+        <div class="blog-container flex">
+            <div class="posts-container">
+                <div class="post flex">
+                    <div class="post-image">
+                        <img src="lake.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <h2>Post Title</h2>
+                        <p>
+                            Post Content Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde necessitatibus totam quibusdam a corrupti veritatis quisquam qui excepturi optio cumque!
+                        </p>
+                        <div class="stags">
+                            <span>Author</span>
+                            <span>Views</span>
+                            <span>Publish</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="categories"></div>
+        </div>
     </main>
-    
-    <script src="script.js"></script>
 </body>
 </html>
