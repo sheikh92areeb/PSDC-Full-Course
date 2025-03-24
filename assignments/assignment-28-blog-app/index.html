@@ -1,48 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs Arena</title>
+    <title>My Blogs</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="utilities.css">
 </head>
+
 <body>
-    <header class="container flex justify-between items-center">
-        <div class="logo">
-            <h1>Blogs Arena</h1>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>My <span>Blogs</span></h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Latest</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul class="flex">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Latest</a></li>
-                <li><a href="#">Category</a></li>
-                <li><a href="#">My Posts</a></li>
-            </ul>
-        </nav>
     </header>
-    <main class="container">
-        <div class="blog-container flex">
-            <div class="posts-container">
-                <div class="post flex">
-                    <div class="post-image">
-                        <img src="lake.jpg" alt="">
-                    </div>
-                    <div class="post-info">
-                        <h2>Post Title</h2>
-                        <p>
-                            Post Content Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde necessitatibus totam quibusdam a corrupti veritatis quisquam qui excepturi optio cumque!
+
+    <main class="main">
+        <div class="container">
+            <div class="blog-container">
+                <div class="blog-posts">
+                    <div class="post">
+                        <h2 class="title">Title</h2>
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
                         </p>
-                        <div class="stags">
-                            <span>Author</span>
-                            <span>Views</span>
-                            <span>Publish</span>
+                        <div class="action">
+                            <div class="btn">
+                                <button>Read More</button>
+                            </div>
+                            <div class="stags">
+                                <span>Author</span>
+                                <span>Views</span>
+                                <span>Publish</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <h2 class="title">Title</h2>
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
+                        </p>
+                        <div class="action">
+                            <div class="btn">
+                                <button>Read More</button>
+                            </div>
+                            <div class="stags">
+                                <span>Author</span>
+                                <span>Views</span>
+                                <span>Publish</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <h2 class="title">Title</h2>
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
+                        </p>
+                        <div class="action">
+                            <div class="btn">
+                                <button>Read More</button>
+                            </div>
+                            <div class="stags">
+                                <span>Author</span>
+                                <span>Views</span>
+                                <span>Publish</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post">
+                        <h2 class="title">Title</h2>
+                        <p class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
+                        </p>
+                        <div class="action">
+                            <div class="btn">
+                                <button>Read More</button>
+                            </div>
+                            <div class="stags">
+                                <span>Author</span>
+                                <span>Views</span>
+                                <span>Publish</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="blog-form">
+                    <form action="#">
+                        <h2>Add Blog Post</h2>
+                        <div class="form-control">
+                            <label for="">Post Title</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Post Content</label>
+                            <textarea name="" id="" rows="7"></textarea>
+                        </div>
+                        <div class="form-control">
+                            <label for="">Author Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-control">
+                            <label for="">Publish Date</label>
+                            <input type="date">
+                        </div>
+                        <div class="form-btn">
+                            <input type="submit" value="Add Post">
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="categories"></div>
         </div>
     </main>
 </body>
+
 </html>
