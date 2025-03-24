@@ -32,6 +32,7 @@ body {
     width: 100%;
     height: 100vh;
     background-color: var(--bg-black-900);
+    position: relative;
 }
 
 ul {
@@ -91,6 +92,7 @@ a {
     min-height: calc(100% - 50px);
     padding: 30px 0;
 }
+
 
 .blog-container {
     display: flex;
@@ -224,4 +226,83 @@ a {
 .blog-form input[type="submit"]:hover {
     background-color: var(--skin-color);
     color: var(--bg-black-900);
+}
+
+.read-post-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.read-post-container.active {
+    display: block;
+}
+
+.read-post {
+    position: absolute;
+    width: 75%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-black-100);
+    padding: 30px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.post-btns {
+    height: 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.post-btns button {
+    background-color: transparent;
+    border: 1px solid var(--skin-color);
+    color: var(--skin-color);
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.post-btns button:hover {
+    background-color: var(--skin-color);
+    color: var(--bg-black-100);
+}
+
+.post-btns span {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.post-preview {
+    margin-top: 20px;
+}
+
+.post-preview .title {
+    color: var(--text-black-700);
+    margin-bottom: 10px;
+}
+
+.post-preview .stags {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--text-black-700);
+    margin-bottom: 10px;
+}
+
+.post-preview .content {
+    line-height: 1.3;
 }

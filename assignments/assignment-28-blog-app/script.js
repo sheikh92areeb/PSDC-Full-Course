@@ -9,6 +9,7 @@ let titleInput = document.getElementById("title");
 let authorInput = document.getElementById("author");
 let publishInput = document.getElementById("publish");
 let contentInput = document.getElementById("content");
+let postPreview = document.querySelector(".read-post-container");
 
 // Fetching and Display Blogs
 async function fetchBlogs() {
@@ -75,7 +76,17 @@ blogForm.addEventListener("submit", async (e) => {
 // Read Full Post
 function readPost(id) {
     console.log(id);
+    postPreview.classList.add("active");
+    let show = postPreview.querySelector(".read-post")
+    console.log(show)
+    show.innerHTML = ""
+
 }
+
+
+closeBtn.addEventListener("click", ()=> {
+    postPreview.classList.remove("active");
+})
 
 
 
