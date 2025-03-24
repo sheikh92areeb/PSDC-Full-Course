@@ -71,23 +71,53 @@ blogForm.addEventListener("submit", async (e) => {
 
 })
 
-// Delete Post
+// Edit Post
+async function editPost(id) {
+    const data = await fetch(`${apiUrl}/${id}`);
+    const response = await data.json();
 
-// Read Full Post
-function readPost(id) {
-    console.log(id);
-    postPreview.classList.add("active");
-    let show = postPreview.querySelector(".read-post")
-    console.log(show)
-    show.innerHTML = ""
+    idInput.value = response.id;
+    titleInput.value = response.title;
+    authorInput.value = response.author;
+    publishInput.value = response.publish;
+    contentInput.value = response.content;
 
+    closePost();
 }
 
+// Delete Post
+async function deletePost(id) {
+    await fetch(`${apiUrl}/${id}`, {method:"DELETE"});
+    closePost();
+    fetchBlogs();
+}
 
-closeBtn.addEventListener("click", ()=> {
+// Read Full Post
+async function readPost(id) {
+    const data = await fetch(`${apiUrl}/${id}`);
+    const response = await data.json();
+
+    postPreview.classList.add("active");
+    let post = postPreview.querySelector(".read-post")
+    post.innerHTML = `<div class="post-btns">
+        <button onclick="editPost('${response.id}')">Edit</button>
+        <button onclick="deletePost('${response.id}')">Delete</button>
+        <button onclick="closePost()">X</button>
+    </div>
+    <div class="post-preview">
+        <h1 class="title">${response.title}</h1>
+        <div class="stags">
+            <span>${response.author}</span>
+            <span>${response.publish}</span>
+        </div>
+        <p class="content">${response.content}</p>
+    </div>`;
+}
+
+// Close Full Post
+function closePost() {
     postPreview.classList.remove("active");
-})
+}
 
-
-
+// Load Data 
 fetchBlogs();
