@@ -15,6 +15,19 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-black-900);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bg-black-50);
+    border-radius: 5px;
+}
+
 body {
     width: 100%;
     height: 100vh;
@@ -97,19 +110,6 @@ a {
     width: 70%;
 }
 
-.blog-posts::-webkit-scrollbar {
-    width: 5px;
-}
-
-.blog-posts::-webkit-scrollbar-track {
-    background-color: var(--bg-black-900);
-}
-
-.blog-posts::-webkit-scrollbar-thumb {
-    background-color: var(--bg-black-50);
-    border-radius: 5px;
-}
-
 .blog-form {
     width: 30%;
 }
@@ -127,10 +127,11 @@ a {
     height: 30px;
     font-size: 26px;
     color: var(--text-black-700);
+    margin-bottom: 10px;
 }
 
 .post .content {
-    height: calc(100% - 30px - 30px);
+    height: calc(100% - 30px - 30px - 10px - 10px);
     font-size: 14px;
     color: var(--text-black-900);
     overflow: hidden;
@@ -142,6 +143,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 10px;
 }
 
 .action button {
@@ -169,6 +171,7 @@ a {
 .blog-form h2 {
     text-align: center;
     margin-bottom: 10px;
+    color: var(--text-black-700);
 }
 
 .blog-form .form-control {
@@ -199,4 +202,26 @@ a {
     padding: 4px 10px;
     color: var(--text-black-900);
     font-size: 16px;
+    background-color: var(--bg-black-900);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.blog-form form input:focus,
+.blog-form form textarea:focus{
+    border-color: var(--skin-color);
+}
+
+.blog-form input[type="submit"] {
+    background-color: transparent;
+    border-color: var(--skin-color);
+    color: var(--skin-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blog-form input[type="submit"]:hover {
+    background-color: var(--skin-color);
+    color: var(--bg-black-900);
 }

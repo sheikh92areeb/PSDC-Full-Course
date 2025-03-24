@@ -34,96 +34,28 @@
         <div class="container">
             <div class="blog-container">
                 <div class="blog-posts">
-                    <div class="post">
-                        <h2 class="title">Title</h2>
-                        <p class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
-                        </p>
-                        <div class="action">
-                            <div class="btn">
-                                <button>Read More</button>
-                            </div>
-                            <div class="stags">
-                                <span>Author</span>
-                                <span>Views</span>
-                                <span>Publish</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <h2 class="title">Title</h2>
-                        <p class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
-                        </p>
-                        <div class="action">
-                            <div class="btn">
-                                <button>Read More</button>
-                            </div>
-                            <div class="stags">
-                                <span>Author</span>
-                                <span>Views</span>
-                                <span>Publish</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <h2 class="title">Title</h2>
-                        <p class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
-                        </p>
-                        <div class="action">
-                            <div class="btn">
-                                <button>Read More</button>
-                            </div>
-                            <div class="stags">
-                                <span>Author</span>
-                                <span>Views</span>
-                                <span>Publish</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="post">
-                        <h2 class="title">Title</h2>
-                        <p class="content">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate!
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis.
-                        </p>
-                        <div class="action">
-                            <div class="btn">
-                                <button>Read More</button>
-                            </div>
-                            <div class="stags">
-                                <span>Author</span>
-                                <span>Views</span>
-                                <span>Publish</span>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
+
                 <div class="blog-form">
-                    <form action="#">
+                    <form action="#" id="blog-form">
+                        <input type="hidden" id="postId">
                         <h2>Add Blog Post</h2>
                         <div class="form-control">
-                            <label for="">Post Title</label>
-                            <input type="text">
+                            <label for="title">Post Title</label>
+                            <input type="text" id="title">
                         </div>
                         <div class="form-control">
-                            <label for="">Post Content</label>
-                            <textarea name="" id="" rows="7"></textarea>
+                            <label for="content">Post Content</label>
+                            <textarea name="content" id="content" rows="7"></textarea>
                         </div>
                         <div class="form-control">
-                            <label for="">Author Name</label>
-                            <input type="text">
+                            <label for="author">Author Name</label>
+                            <input type="text" id="author">
                         </div>
                         <div class="form-control">
-                            <label for="">Publish Date</label>
-                            <input type="date">
+                            <label for="publish">Publish Date</label>
+                            <input type="date" id="publish">
                         </div>
                         <div class="form-btn">
                             <input type="submit" value="Add Post">
@@ -133,6 +65,8 @@
             </div>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,32 @@
 {
-    "posts":[]
+  "posts": [
+    {
+      "id": "1",
+      "title": "First Blog",
+      "author": "Areeb",
+      "publish": "2025-03-18",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis."
+    },
+    {
+      "id": "2",
+      "title": "Web Development",
+      "author": "Areeb",
+      "publish": "2025-03-18",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis."
+    },
+    {
+      "id": "3",
+      "title": "Fundamental of JS",
+      "author": "Areeb",
+      "publish": "2025-03-18",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis."
+    },
+    {
+      "id": "43ff",
+      "title": "Python",
+      "author": "Kamran",
+      "publish": "2025-03-18",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore nemo voluptas accusamus saepe dolor est enim aliquam ipsa harum molestias dolorum, repellat, distinctio tempora eveniet! Minus tenetur ratione iure cupiditate! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sed possimus minima quaerat ipsam nulla a ullam quidem. Deserunt esse eveniet aut illum minus recusandae, dolore exercitationem perspiciatis explicabo quis."
+    }
+  ]
 }
