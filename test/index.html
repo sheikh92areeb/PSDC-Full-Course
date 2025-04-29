@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>My ToDo List</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: 400px;
+    background-color: #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.todo-list {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.add-todo {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+input {
+    width: 70%;
+    padding: 6px 12px;
+    font-size: 18px;
+    outline: none;
+}
+
+.add-btn {
+    width: 30%;
+    padding: 6px 12px;
+}
+
+.todo {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+.todo p {
+    width: 60%;
+}
+
+.todo button {
+    padding: 4px;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">My ToDo List</h1>
+        <div class="todo-list">
+            <div class="add-todo">
+                <input type="hidden" id="tId">
+                <input type="text" placeholder="add todo" id="input">
+                <button class="add-btn" id="add-btn">Add Item</button>
+            </div>
+            <div class="todos">
+                                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let input = document.getElementById("input")
+let addBtn = document.getElementById("add-btn")
+let updBtn = document.getElementById("update-btn")
+let delBtn = document.getElementById("delete-btn")
+let todos = document.querySelector(".todos")
+
+let inputData = ''
+let getTId = document.getElementById("tId").value = 1
+
+input.addEventListener('change', (e)=> {
+    inputData = e.target.value
+})
+
+addBtn.addEventListener('click', ()=> {    
+    getTId += 1    
+    let todo = `
+        <div class="todo">
+        <input type="hidden" id="getInput" value="${getTId}">
+            <p>${inputData}</p>
+            <div class="btns">
+                <button id="update-btn" onclick="edit(${getTId})">Update</button>
+                <button id="delete-btn" onclick="del(${getTId})">Delete</button>
+            </div>
+        </div>`
+    todos.innerHTML += todos.innerHTML = todo
+    input.value = ''
+    addBtn.innerText = 'Add Item'
+})
+
+function edit(tId) {    
+    todos.querySelectorAll('.todo').forEach(e=>{        
+        let data = e.firstElementChild.value        
+        if ( parseInt(data) === tId) {            
+            input.value = e.children[1].textContent
+            todos.removeChild(e)
+            addBtn.innerText = 'Update Item'
+        }        
+    })
+
+}
+
+function del(tId) {    
+    todos.querySelectorAll('.todo').forEach(e=>{        
+        let data = e.firstElementChild.value        
+        if ( parseInt(data) === tId) {        
+            todos.removeChild(e)            
+        }        
+    })
+
+}
+
+    </script>
+</body>
+</html>
