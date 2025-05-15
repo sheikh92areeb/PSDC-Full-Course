@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View and manage all enrolled students in EduSphere. Search, filter, and access student records from one dashboard." />
+  <meta name="keywords" content="All Students, EduSphere, Student Records, Student List, Manage Students, School System" />
+  <meta name="author" content="Areeb Sheikh" />
+  <title>Admin Dashboard | EduSphere</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../assets/css/output.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside class="sidebar w-[200px] h-screen bg-[#0097a0] text-white fixed top-0 left-[-100%] md:left-0 flex flex-col border-r shadow-xl">
+    <div class="sidebar-logo py-2 cursor-pointer mb-4">
+      <h2 class="text-3xl font-bold text-center">EduSphere</h2>
+    </div>
+    <ul class="sidebar-menu px-4 max-h-full overflow-y-auto overscroll-contain">
+      <li class="border-b border-dashed p-2"><a href="./index.html" class="text-base font-medium">Dashboard</a></li>
+      <li class="border-b border-dashed p-2 bg-[#82c8ca]"><a href="./all-sudents.html" class="text-base font-medium">Students</a></li>
+      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Teachers</a></li>
+      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Attendance</a></li>
+      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Grades</a></li>
+      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Classes</a></li>
+      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Messages</a></li>
+      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Settings</a></li>
+      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-main ps-0 md:ps-[200px] w-full max-h-screen overflow-y-auto overscroll-contain">
+    
+    <!-- Top Bar -->
+    <header class="dashboard-header bg-[#0097a0] text-white flex justify-between items-center px-4 py-2 shadow-xl sticky top-0">
+      <img src="./imgs/menu.svg" alt="Menu Icon" class="w-6 me-5 cursor-pointer md:hidden" >
+      <h1 class="text-xl font-medium">Welcome, Admin</h1>
+      <div class="admin-profile flex items-center gap-2 ml-auto mr-4 cursor-pointer">
+        <span class="text-sm">Admin</span>
+        <img src="./imgs/user.svg" alt="Admin Avatar" class="w-6" />
+      </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <section class="dashboard-content  px-5 py-4">
+        <header class="mb-4">
+            <h1 class="text-xl font-medium text-gray-500 ps-3">All Students</h1>
+            <p class="text-sm font-medium text-gray-500 ps-3">Browse, search, and manage student records easily.</p>
+        </header>
+
+        <section class="search-filter w-full shadow-[0px_0px_5px_rgba(0,0,0,0.5)] rounded-lg p-3 mb-4 flex items-center gap-6">
+            <input type="text" placeholder="Search by name, ID, or class" class="text-sm border-2 border-gray-500 outline-0 px-4 py-1 rounded-full focus:border-[#0097a0] w-1/4" />
+            <select class="text-sm text-gray-500 border-2 border-gray-500 outline-0 px-4 py-1 rounded-full focus:border-[#0097a0]">
+                <option value="">Filter by Class</option>
+                <option value="Class 1">Class 1</option>
+                <option value="Class 2">Class 2</option>
+                <option value="Class 3">Class 3</option>
+            </select>
+        </section>
+
+        <section class="students-table w-full shadow-[0px_0px_5px_rgba(0,0,0,0.5)] rounded-lg p-3">
+            <table class="w-full border-separate border-spacing-2 border border-gray-400">
+                <thead>
+                    <tr>
+                        <th class="border border-gray-300">Photo</th>
+                        <th class="border border-gray-300">Student ID</th>
+                        <th class="border border-gray-300">Full Name</th>
+                        <th class="border border-gray-300">Class</th>
+                        <th class="border border-gray-300">Section</th>
+                        <th class="border border-gray-300">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300"><img src="./imgs/user-dark.svg" alt="Student Photo" class="w-6"></td>
+                        <td class="border border-gray-300">STU001</td>
+                        <td class="border border-gray-300">Ali Ahmed</td>
+                        <td class="border border-gray-300">10</td>
+                        <td class="border border-gray-300">A</td>
+                        <td class="border border-gray-300"><a href="student-profile.html">View Profile</a></td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300"><img src="./imgs/user-dark.svg" alt="Student Photo" class="w-6"></td>
+                        <td class="border border-gray-300">STU002</td>
+                        <td class="border border-gray-300">Sana Khan</td>
+                        <td class="border border-gray-300">9</td>
+                        <td class="border border-gray-300">B</td>
+                        <td class="border border-gray-300"><a href="student-profile.html">View Profile</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </section>
+
+
+  </main>
+
+</body>
+</html>

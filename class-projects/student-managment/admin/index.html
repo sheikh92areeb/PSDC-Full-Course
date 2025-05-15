@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="EduSphere Admin Dashboard - Manage students, teachers, attendance, and academic performance from one centralized panel." />
   <meta name="keywords" content="Admin Dashboard, EduSphere, Student Management System, School Admin Panel, Academic Dashboard, Manage Students" />
-  <meta name="author" content="Your Name or Company" />
+  <meta name="author" content="Areeb Sheikh" />
   <title>Admin Dashboard | EduSphere</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="../assets/css/output.css">
@@ -13,13 +13,13 @@
 <body>
 
   <!-- Sidebar -->
-  <aside class="sidebar w-[200px] h-screen bg-[#0097a0] text-white fixed top-0 left-0 flex flex-col border-r shadow-xl">
+  <aside class="sidebar w-[200px] h-screen bg-[#0097a0] text-white fixed top-0 left-[-100%] md:left-0 flex flex-col border-r shadow-xl">
     <div class="sidebar-logo py-2 cursor-pointer mb-4">
       <h2 class="text-3xl font-bold text-center">EduSphere</h2>
     </div>
     <ul class="sidebar-menu px-4 max-h-full overflow-y-auto overscroll-contain">
-      <li class="border-b border-dashed p-2 bg-[#82c8ca]"><a href="#" class="text-base font-medium">Dashboard</a></li>
-      <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Students</a></li>
+      <li class="border-b border-dashed p-2 bg-[#82c8ca]"><a href="./index.html" class="text-base font-medium">Dashboard</a></li>
+      <li class="border-b border-dashed p-2"><a href="./all-sudents.html" class="text-base font-medium">Students</a></li>
       <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Teachers</a></li>
       <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Attendance</a></li>
       <li class="border-b border-dashed p-2"><a href="#" class="text-base font-medium">Grades</a></li>
@@ -31,13 +31,14 @@
   </aside>
 
   <!-- Main Content -->
-  <main class="dashboard-main ps-[200px] w-full max-h-screen overflow-y-auto overscroll-contain">
+  <main class="dashboard-main ps-0 md:ps-[200px] w-full max-h-screen overflow-y-auto overscroll-contain">
     
     <!-- Top Bar -->
     <header class="dashboard-header bg-[#0097a0] text-white flex justify-between items-center px-4 py-2 shadow-xl sticky top-0">
+      <img src="./imgs/menu.svg" alt="Menu Icon" class="w-6 me-5 cursor-pointer md:hidden" >
       <h1 class="text-xl font-medium">Welcome, Admin</h1>
       <div class="admin-profile flex items-center gap-2 ml-auto mr-4 cursor-pointer">
-        <span class="text-sm">Admin Name</span>
+        <span class="text-sm">Admin</span>
         <img src="./imgs/user.svg" alt="Admin Avatar" class="w-6" />
       </div>
     </header>
@@ -46,28 +47,28 @@
     <section class="dashboard-content  px-5 py-4">
       <h2 class="text-xl font-medium text-gray-500 mb-3 ps-3">Overview</h2>
       <div class="dashboard-widgets w-full shadow-[0px_0px_5px_rgba(0,0,0,0.5)] rounded-lg flex flex-wrap gap-4 p-4 bg-white">
-        <div class="widget flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
+        <div class="widget flex-1/2 md:flex-1/3 lg:flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src="./imgs/students.svg" alt="Student" class="w-8 mb-2" />
             <div class="text">
                 <h3 class="text-lg font-medium">Total Students</h3>
                 <p class="font-medium">250</p>
             </div>
         </div>
-        <div class="widget flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
+        <div class="widget flex-1/2 md:flex-1/3 lg:flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src="./imgs/students.svg" alt="Student" class="w-8 mb-2" />
             <div class="text">
                 <h3 class="text-lg font-medium">Total Teachers</h3>
                 <p class="font-medium">25</p>
             </div>
         </div>
-        <div class="widget flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
+        <div class="widget flex-1/2 md:flex-1/3 lg:flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src="./imgs/students.svg" alt="Student" class="w-8 mb-2" />
             <div class="text">
                 <h3 class="text-lg font-medium">Classes Running</h3>
                 <p class="font-medium">12</p>
             </div>
         </div>
-        <div class="widget flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
+        <div class="widget flex-1/2 md:flex-1/3 lg:flex-1/5 flex items-center gap-3 bg-[#0097a0] text-white p-4 rounded-lg shadow-md cursor-pointer">
             <img src="./imgs/students.svg" alt="Student" class="w-8 mb-2" />
             <div class="text">
                 <h3 class="text-lg font-medium">Messages</h3>
