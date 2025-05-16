@@ -11,6 +11,7 @@
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-sm: 0.875rem;
@@ -197,9 +198,6 @@
   .top-5 {
     top: calc(var(--spacing) * 5);
   }
-  .left-0 {
-    left: calc(var(--spacing) * 0);
-  }
   .left-5 {
     left: calc(var(--spacing) * 5);
   }
@@ -275,17 +273,11 @@
   .w-1\/4 {
     width: calc(1/4 * 100%);
   }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
-  }
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
   .w-8 {
     width: calc(var(--spacing) * 8);
-  }
-  .w-10 {
-    width: calc(var(--spacing) * 10);
   }
   .w-50 {
     width: calc(var(--spacing) * 50);
@@ -299,8 +291,20 @@
   .w-\[350px\] {
     width: 350px;
   }
+  .w-fit {
+    width: fit-content;
+  }
   .w-full {
     width: 100%;
+  }
+  .min-w-\[6\] {
+    min-width: 6;
+  }
+  .min-w-\[600px\] {
+    min-width: 600px;
+  }
+  .min-w-\[700px\] {
+    min-width: 700px;
   }
   .flex-1 {
     flex: 1;
@@ -308,11 +312,11 @@
   .flex-1\/2 {
     flex: calc(1/2 * 100%);
   }
-  .flex-1\/3 {
-    flex: calc(1/3 * 100%);
+  .table-auto {
+    table-layout: auto;
   }
-  .flex-1\/5 {
-    flex: calc(1/5 * 100%);
+  .table-fixed {
+    table-layout: fixed;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -358,6 +362,9 @@
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
@@ -399,6 +406,9 @@
   .border-gray-500 {
     border-color: var(--color-gray-500);
   }
+  .border-gray-800 {
+    border-color: var(--color-gray-800);
+  }
   .bg-\[\#82c8ca\] {
     background-color: #82c8ca;
   }
@@ -419,6 +429,12 @@
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -449,9 +465,6 @@
   }
   .ps-3 {
     padding-inline-start: calc(var(--spacing) * 3);
-  }
-  .ps-\[200px\] {
-    padding-inline-start: 200px;
   }
   .pb-10 {
     padding-bottom: calc(var(--spacing) * 10);
@@ -607,9 +620,14 @@
       flex: calc(1/3 * 100%);
     }
   }
-  .md\:flex-1\/5 {
+  .md\:table-auto {
     @media (width >= 48rem) {
-      flex: calc(1/5 * 100%);
+      table-layout: auto;
+    }
+  }
+  .md\:table-fixed {
+    @media (width >= 48rem) {
+      table-layout: fixed;
     }
   }
   .md\:flex-row {
