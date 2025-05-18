@@ -33,7 +33,6 @@ function reqParser(url) {
     };
 }
 
-
 let url1 = "http://localhost:3000/users?isActive=true&membership=gold";
 let url2 = "https://example.com/profile";
 let url3 = "http://localhost:8080/home";
