@@ -1,32 +1,25 @@
 // Request Parser for converting URL string into object
 function reqParser(url) {
 
-    // Decode the URL to handle any encoded characters
-    const decodedUrl = decodeURIComponent(url);
-    
+    const decodedUrl = decodeURIComponent(url);    
     const [protocol, rest] = decodedUrl.split("://");
     const [hostPort, ...pathParts] = rest.split("/");
     const [host, portStr] = hostPort.split(":");
     const port = portStr ? parseInt(portStr) : "";
-
     const fullPath = pathParts.join("/");
     const [path, queryString] = fullPath.split("?");
 
     const query = {};
 
     if (queryString) {
-
         const params = queryString.split("&");
-
         for (let param of params) {
             let [key, value] = param.split("=");
 
-            // Convert to boolean/number if applicable
             if (value === "true") value = true;
             else if (value === "false") value = false;
             else if (!isNaN(value) && value.trim() !== "") value = Number(value);
 
-            // Array-like handling
             if (key.endsWith("[]")) {
                 key = key.slice(0, -2);
                 if (!Array.isArray(query[key])) {
@@ -34,7 +27,6 @@ function reqParser(url) {
                 }
                 query[key].push(value);
             } else if (query.hasOwnProperty(key)) {
-                // Handle repeated keys (not [] but still duplicated)
                 if (!Array.isArray(query[key])) {
                     query[key] = [query[key]];
                 }
@@ -101,4 +93,3 @@ console.log(result11);
 let url12 = "https://shop.com/product?size=xl&size=xxl&size=medium";
 let result12 = reqParser(url12);  // output {req: "https", host: "shop.com",port: "",path: "product", query: {size: ["xl", "xxl", "medium"]} }
 console.log(result12);
-
