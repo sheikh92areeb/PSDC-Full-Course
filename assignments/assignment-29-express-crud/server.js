@@ -50,7 +50,14 @@ app.patch('/users/:id', (req, res) => {
 });
 
 app.delete('/users/:id', (req, res) => {
-  res.send('User Deleted');
+  if (!req.params.id) {
+    return res.status(400).send("User ID is required")
+  }
+
+  const userIndex = users.findIndex((user) => user.id === parseInt(req.params.id))
+  users.splice(userIndex,1)
+  res.status(200).send({ message: `User ${req.params.id} is Deleted` });
+
 });
 
 app.listen(port, () => {
