@@ -4,9 +4,8 @@ const usersRoute = require('./routes/usersRoutes.js');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello! World.');
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ extended: true }));
 
 app.use('/', usersRoute);
 
