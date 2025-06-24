@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 44px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px 100px;
+        }
+        .product {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-details {
+            padding: 15px;
+        }
+        .product-name {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-size: 20px;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        .product-actions {
+            padding: 15px;
+            text-align: center;
+        }
+        .add-to-cart {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shop Our Products</h1>
+    <div class="products">
+        <div class="product">
+            <a href="">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" alt="product image" width="50">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Product 1</h3>
+                    <p class="product-price">$200</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" alt="product image" width="50">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Product 1</h3>
+                    <p class="product-price">$200</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" alt="product image" width="50">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Product 1</h3>
+                    <p class="product-price">$200</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" alt="product image" width="50">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Product 1</h3>
+                    <p class="product-price">$200</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </a>
+        </div>
+        <div class="product">
+            <a href="">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D" alt="product image" width="50">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">Product 1</h3>
+                    <p class="product-price">$200</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
