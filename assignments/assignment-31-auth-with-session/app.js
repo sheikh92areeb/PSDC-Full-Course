@@ -27,7 +27,7 @@ app.post('/login', (req, res) => {
     const session_id = Date.now()+Math.floor(Math.random() * 1000000);
     sessions[session_id] = user;
     res.setHeader('Set-Cookie', `sessionID=${session_id}; HttpOnly; Path=/`);
-    res.status(200).send({ message:"Successfully logged in", id:session_id });
+    res.status(200).render('dashboard', { user });
 });
 
 app.listen(port, () => {
