@@ -8,5 +8,8 @@
 <body>
     <h1>Welcome, <%= user.name %>!</h1>
     <p>This is your dashboard.</p>
+    <form action="/auth/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>

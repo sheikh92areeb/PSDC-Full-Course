@@ -12,6 +12,17 @@ const getUserData = async (req, res, next) => {
     next();
 }
 
+const isLoggedIn = async (req, res, next) => {
+    // Check if sessionId exists in cookies
+    const sessionId = req.cookies.sessionId;
+    const sessions = await getSessions();
+
+    // If sessionId exists, redirect to dashboard
+    if (!sessionId || !sessions[sessionId]) return res.status(403).redirect('/auth/login');
+    next();
+}
+
 module.exports = {
-    getUserData
+    getUserData,
+    isLoggedIn
 };

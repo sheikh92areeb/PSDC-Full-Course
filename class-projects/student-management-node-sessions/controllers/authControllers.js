@@ -29,8 +29,9 @@ const logoutUser = async (req, res) => {
     const sessionId = req.cookies.sessionId;
     const sessions = await getSessions();
     delete sessions[sessionId];
-    req.app.set('sessions', sessions);
-
+    // Save the updated sessions data
+    await fs.promises.writeFile('./data/sessions.json', JSON.stringify(sessions, null, 2));
+        
     // Clear the session cookie
     res.clearCookie("sessionId");
     
@@ -40,6 +41,7 @@ const logoutUser = async (req, res) => {
 
 module.exports = {
     getLoginPage, loginUser,
+    logoutUser
 }
 
 
