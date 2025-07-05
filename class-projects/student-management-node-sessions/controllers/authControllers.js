@@ -1,6 +1,6 @@
 const users = require("../data/users-data.js");
 const fs = require('fs');
-const { createSession } = require("../utils/sessions.js");
+const { createSession, getSessions } = require("../utils/sessions.js");
 
 const getLoginPage = (req, res) => {    
    res.render("login", { title: "Login", error: null });
@@ -23,6 +23,20 @@ const loginUser = async (req, res) => {
     res.redirect("/user/dashboard");    
 }
 
+const logoutUser = async (req, res) => {
+    
+    // Clear the session data from the server
+    const sessionId = req.cookies.sessionId;
+    const sessions = await getSessions();
+    delete sessions[sessionId];
+    req.app.set('sessions', sessions);
+
+    // Clear the session cookie
+    res.clearCookie("sessionId");
+    
+    // Redirect to login page
+    res.redirect("/auth/login");
+}
 
 module.exports = {
     getLoginPage, loginUser,
