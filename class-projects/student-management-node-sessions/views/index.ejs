@@ -59,7 +59,14 @@
     <div class="container">
         <h1>Welcome to Eduspare</h1>
         <p>Student Management System</p>
-        <button><a href="/auth/login">Login</a></button>
+        <% if (isLoggedIn) { %>
+            <button><a href="/user/dashboard">Dashboard</a></button>
+            <form action="/auth/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        <% } else { %>
+            <button><a href="/auth/login">Login</a></button>
+        <% } %>
     </div>
 </body>
 </html>
