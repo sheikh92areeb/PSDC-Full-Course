@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to EduSphere – a secure and smart student management system to access student data, attendance, and academic performance." />
+  <meta name="keywords" content="EduSphere Login, Student Management Login, School Software Access, Secure Login Portal, Academic Management System" />
+    <meta name="author" content="Areeb Sheikh" />
+
+    <title>EduSphere - Smart Student Management System</title>
+
+    <link rel="shortcut icon" href="../assets/imgs/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/output.css">
+</head>
+<body class="w-full h-screen bg-[#82c8ca] flex items-center justify-center relative">
+    <div class="logo gap-2 cursor-pointer absolute top-5 left-5">
+        <a href="../index.html" class="flex items-center gap-2">            
+            <img src="../assets/imgs/logo.png" alt="EduSphere Logo" class="h-10">
+            <h1 class="text-2xl font-semibold">EduSphere</h1>
+        </a>
+    </div>
+    <!-- Login Section -->
+    <section class="login-section bg-white w-[350px] rounded-lg px-8 py-5 shadow-xl shadow-[#0097a0]">
+        <div class="login-container">
+            <h1 class="text-2xl font-bold text-center text-[#0097a0]">EduSphere Login</h1>
+            <p class="font-medium text-center">Access your dashboard.</p>
+
+            <form class="login-form my-5" accept="/auth/login" method="POST">
+                <div class="flex flex-col w-full mb-3">
+                    <label for="username" class="text-sm mb-1">Username</label>
+                    <input type="username" id="username" class="text-sm border-2 outline-0 px-4 py-1 rounded-full focus:border-[#0097a0]" name="username" required />
+                </div>
+
+                <div class="flex flex-col w-full mb-3">
+                    <label for="password" class="text-sm mb-1">Password</label>
+                    <input type="password" id="password" class="text-sm border-2 outline-0 px-4 py-1 rounded-full focus:border-[#0097a0]" name="password" required />                    
+                </div>
+
+                <button type="submit" class="w-full bg-[#0097a0] text-white py-1 rounded-full cursor-pointer mb-4">Login</button>
+            </form>
+
+            <div class="login-footer text-center">
+                <p class="text-sm text-gray-600">Forgot your password? <a href="/auth/reset-password" class="text-[#0097a0] hover:underline">Reset here</a></p>
+                <p class="text-sm text-gray-600">Don’t have an account? <a href="#" class="text-[#0097a0] hover:underline" >Contact admin</a></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
