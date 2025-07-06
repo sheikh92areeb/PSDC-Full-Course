@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | TIMES | Student Management System</title>
+    <link rel="stylesheet" href="/assets/styles/output.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
+</head>
+<body>
+    <div class="container max-w-full ps-[250px]">
+        <!-- sidebar -->
+        <aside class="bg-primary w-[250px] h-full fixed left-0 top-0 border-r border-r-white">
+            <div class="logo text-center mb-5 px-3 py-2">
+                <h1 class="text-4xl font-bold border-b border-b-white pb-1">
+                    <a href="/user/dashboard" class="text-white">TIMES</a>
+                </h1>
+            </div>
+            <nav class="px-3">
+                <ul>
+                    <li class="ps-3 border-b border-b-white py-2 cursor-pointer hover:bg-[#0f1a4d] active:bg-[#0f1a4d]">
+                        <a href="/user/dashboard" class="text-white">Dashboard</a>
+                    </li>
+                    <li class="ps-3 border-b border-b-white py-2 cursor-pointer hover:bg-[#0f1a4d] active:bg-[#0f1a4d]">
+                        <a href="/user/students" class="text-white">Students</a>
+                    </li>
+                    <li class="ps-3 border-b border-b-white py-2 cursor-pointer hover:bg-[#0f1a4d] active:bg-[#0f1a4d]">
+                        <a href="/user/teachers" class="text-white">Teachers</a>
+                    </li>
+                    <li class="ps-3 border-b border-b-white py-2 cursor-pointer hover:bg-[#0f1a4d] active:bg-[#0f1a4d]">
+                        <a href="/user/setting" class="text-white">Setting</a>
+                    </li>
+                    <li class="ps-3 border-b border-b-white py-2 cursor-pointer hover:bg-[#0f1a4d] active:bg-[#0f1a4d]">
+                        <form action="/auth/logout" method="post"><input type="submit" value="Logout" class="text-white cursor-pointer"></form>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+    
+        <!-- Header -->
+        <header class="bg-primary p-3 flex justify-between items-center">
+            <div class="left-side flex gap-5 items-center">
+                <div class="manu-icon cursor-pointer">
+                    <img src="/assets/images/menu.svg" alt="Menu Icon" class="w-6"> 
+                </div>
+                <h2 class="greeting text-white text-xl font-semibold">Welcome! Admin</h2>
+            </div>
+            <div class="right-side flex gap-5 items-center pe-10">
+                <form action="/search">
+                    <div class="search-input-group border border-white flex gap-2 rounded-full px-4 py-1">
+                        <input type="text" id="search" name="search" class="outline-none text-sm text-white" placeholder="Search Here" autocomplete="off">
+                        <button type="submit"><img src="/assets/images/search.svg" alt="search icon" class="w-6"></button>
+                    </div>
+                </form>
+                <div class="actions">
+                    <div class="actions-group group relative">
+                        <div class="action-trigger flex gap-2 text-white font-semibold cursor-pointer">
+                            Admin
+                            <img src="/assets/images/user.svg" alt="user icon" class="w-6" />
+                        </div>
+                        <div class="action-dailog absolute top-10 right-[-20px] bg-gray w-[160px] p-4 hidden group-hover:block">
+                            <ul>
+                                <li class="border-b border-b-[#0f1a4d] px-2 py-1 mb-2"><a href="" class="color-primary">Profile</a></li>
+                                <li class="border-b border-b-[#0f1a4d] px-2 py-1 mb-2"><a href="" class="color-primary">Setting</a></li>
+                                <li class="border-b border-b-[#0f1a4d] px-2 py-1 mb-2">
+                                    <form action="/auth/logout" method="post"><input type="submit" value="Logout" class="color-primary cursor-pointer"></form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header> 
+
+    </div>
+</body>
+</html>

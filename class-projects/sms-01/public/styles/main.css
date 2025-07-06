@@ -1,0 +1,67 @@
+:root {
+    --color-primary: #18206f;
+    --color-primary-dark: #0f1a4d;
+    --color-secondary: #d4af37;
+    --color-secondary-dark: #9b790c;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.home-hero {
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('/assets/images/hero-bg-3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100%;
+    height: 100%;
+}
+
+.login-page {
+    max-width: 100%;
+    height: 100%;
+}
+
+.bg-light-gray {
+    background-color: #e6e7e8 !important;
+}
+.bg-gray {
+    background-color: #f7f7f7 !important;
+}
+
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+.bg-secondary {
+    background-color: var(--color-secondary) !important;
+}
+.color-primary {
+    color: var(--color-primary) !important;
+}
+.color-secondary {
+    color: var(--color-secondary) !important;
+}
+
+.btn {
+    display: inline-block; 
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: var(--color-secondary-dark);
+}

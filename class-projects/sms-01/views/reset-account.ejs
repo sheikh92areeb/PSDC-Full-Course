@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+    <div class="container login-page bg-gray flex items-center">        
+
+        <div class="login-form-container bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto">
+            <h1 class="text-2xl font-bold text-center mb-3">Reset Account</h1>
+            <p class="text-center text-gray-600 mb-4">Please enter your email address to reset your credentials.</p>
+            <form action="/auth/reset-password" method="POST" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-5 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-[#18206f] focus:border-[#18206f]">
+                </div>                
+                <button type="submit" class="mt-1 w-full py-2 btn btn-primary cursor-pointer">Reset Account</button>
+            </form>
+            <div class="text-center mt-5">
+                <p class="text-sm text-gray-600">Remember your password? <a href="/auth/login" class="text-[#18206f] hover:underline">Login</a></p>                
+            </div>
+        </div>
+    </div>
+<%- include('partials/footer') %>

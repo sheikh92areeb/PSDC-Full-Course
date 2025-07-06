@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+    <div class="container login-page bg-gray flex items-center">        
+
+        <div class="login-form-container bg-white p-8 rounded-lg shadow-lg w-full max-w-md mx-auto">
+            <h1 class="text-2xl font-bold text-center mb-3">Login</h1>
+            <p class="text-center text-gray-600 mb-4">Welcome back! Please enter your credentials to continue.</p>
+            <form action="/auth/login" method="POST" class="space-y-4">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" name="username" required class="mt-1 block w-full px-5 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-[#18206f] focus:border-[#18206f]">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" required class="mt-1 block w-full px-5 py-2 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-[#18206f] focus:border-[#18206f]">
+                </div>
+                <button type="submit" class="mt-1 w-full py-2 btn btn-primary cursor-pointer">Login</button>
+            </form>
+            <div class="text-center mt-5">
+                <p class="text-sm text-gray-600">Forgot your password? <a href="/auth/reset-password" class="text-[#18206f] hover:underline">Reset it here</a></p>
+                <p class="text-sm text-gray-600">Don't have an account? <a href="/auth/contact-admin" class="text-[#18206f] hover:underline">Contact Admin</a></p>
+            </div>
+        </div>
+    </div>
+<%- include('partials/footer') %>
