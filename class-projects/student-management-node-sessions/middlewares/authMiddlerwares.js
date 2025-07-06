@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { getSessions } = require("../utils/sessions.js");
+const { getSessions } = require("../utils/utils.js");
 
 const isGuest = async (req, res, next) => {
     // Check if sessionId exists in cookies

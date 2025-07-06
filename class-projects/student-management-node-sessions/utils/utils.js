@@ -7,17 +7,23 @@ const getSessions = async () => {
 }
 
 const createSession = async (user) => {
-    const sessionId = Math.floor(Math.random() * 1000000); 
+    const sessionId = Math.floor(Math.random() * 10000000000); // Generate a random session ID
     const sessions = await getSessions();
 
     // Store the session data
-    sessions[sessionId] = { id: user.id, name: user.name, username: user.username, email: user.email, role: user.role };
+    sessions[sessionId] = { id: user.id };
     await fs.promises.writeFile('./data/sessions.json', JSON.stringify(sessions, null, 2));
-
     return sessionId;
+}
+
+const getUsers = async () => {
+    const usersData = await fs.promises.readFile('./data/users.json', 'utf-8');
+    const users = JSON.parse(usersData);
+    return users;
 }
 
 module.exports = {
     createSession,
     getSessions,
+    getUsers,
 }

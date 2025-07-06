@@ -1,9 +1,9 @@
 const getDashboardPage = (req, res) => {
-    res.render('dashboard', { title: 'Dashboard', user: req.user });
+    res.render('dashboard', { user: req.user });
 }
 
 const getUserProfilePage = (req, res) => {
-    res.render('profile', { title: 'Profile', user: req.user });
+    res.render('profile', { user: req.user });
 }
 
 module.exports = {
