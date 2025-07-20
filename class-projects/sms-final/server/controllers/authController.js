@@ -1,15 +1,16 @@
+// Import Libraries and Dependencies
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User.js');
 const { transporter } = require('../config/nodemailer.js');
+const { EMAIL_VERIFY_TEMPLATE } = require('../config/emailTemplates.js');
 
-// GET PAGES ENDPOINTS
+// GET PAGES CONTROLLERS
 const getLoginPage = (req,res) => res.send("LOGIN PAGE");
 const getResetPasswordPage = (req,res)=>res.send("RESET PASSWORD PAGE");
 const getSignupPage = (req, res) => res.send("SIGN UP PAGE");
 
-// AUTHENTICATION ENDPOINTS
-
+// AUTHENTICATION CONTROLLERS
 // 01- Register
 const registerUser = async (req, res) => {
     // extract data from request body
@@ -108,21 +109,106 @@ const loginUser = async (req, res) => {
 };
 
 // 03- Logout
-const logoutUser = async (req, res) => {}
+const logoutUser = async (req, res) => {
+    try {
+        // Clear Cookie
+        res.clearCookie('token', { 
+            httpOnly: true, 
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Strict',
+        });
+
+        // Send Response
+        return res.status(200).json({ success: true, message: "Logged out successfully" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Server Error" });
+    }
+};
 
 // 04- Send Verify OTP
-const sendVerifyOTP = async (req, res) => {}
+const sendVerifyOTP = async (req, res) => {
+    try {
+        // Extract User ID from Request Object (Set by Middleware)
+        const userID = req.user.id;
+
+        // Find User by ID
+        const user = await User.findById(userID);
+
+        // Check User Varification
+        if (user.isVerified) return res.status(400).json({ success: false, message: "User already verified" });
+
+        // Generate OTP
+        const otp = Math.floor(100000 + Math.random() * 900000).toString(); //Generate 6 digit otp
+        user.verifyOtp = otp;
+        user.verifyOtpExpiryAt = Date.now() + 24 * 60 * 60 * 1000; // 24 hours
+        await user.save();
+
+        // Send OTP via Email
+        const mailOptions = {
+            from: process.env.SENDER_EMAIL,
+            to: user.email,
+            subject: "Account Verification OTP",            
+            html: EMAIL_VERIFY_TEMPLATE.replace('{{otp}}', otp).replace('{{email}}', user.email)
+        };
+        await transporter.sendMail(mailOptions);
+
+        // Send Response
+        return res.status(200).json({ success: true, message: "OTP sent to email" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Server Error" });
+    }
+};
 
 // 05- Verify Email
-const verifyEmail = async (req, res) => {}
+const verifyEmail = async (req, res) => {
+    // Extract otp and user ID from request object
+    const { otp } = req.body;
+    const userID = req.user.id;
+    
+    // Validate Empty Feilds
+    if (!otp || !userID) return res.status(400).json({ success: false, message: "Missing Details" });
+
+    try {
+        // Find User by ID
+        const user = await User.findById(userID);
+        if (!user) return res.status(404).json({ success: false, message: "User not found" });
+
+        // Validate OTP
+        if (user.verifyOtp === '' || user.verifyOtp !== otp ) {
+            return res.status(400).json({ success: false, message: "Invalid OTP" });
+        }
+
+        // Check OTP Expire Date
+        if (user.verifyOtpExpiryAt < Date.now()) {
+            return res.status(400).json({ success: false, message: "OTP expired" });
+        }
+
+        // Set User Varification Data
+        user.isVerified = true;
+        user.verifyOtp = "";
+        user.verifyOtpExpiryAt = 0;
+        await user.save();
+
+        // Send Response
+        return res.status(200).json({ success: true, message: "Email verified successfully" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Server Error" });
+    }
+};
 
 // 06- Send Reset OTP
-const sendResetOTP = async (req, res) => {}
+const sendResetOTP = async (req, res) => {};
 
 // 07- Reset Password
-const resetPassword = async (req, res) => {}
+const resetPassword = async (req, res) => {};
 
-
+// Exports Functions Controller
 module.exports = {
     getLoginPage, getResetPasswordPage, getSignupPage,
     registerUser, loginUser, logoutUser,

@@ -1,5 +1,7 @@
+// Import Libraries and Dependencies
 const mongoose = require('mongoose');
 
+// Create User Schema
 const userSchema = new mongoose.Schema({
     // Basic Info
     name: { type: String, required: true },
@@ -8,11 +10,11 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
     phone: { type: String },
     dob: { type: Date, default: null },
-    gender: { type: String, enum: ['Male', 'Female', 'Other'] },
+    gender: { type: String, enum: ['Male', 'Female', 'Other'], },
     bio: { type: String, default: '' },
     profile: { type: String, default: '' },
 
-    // Role
+    // Roles
     role: { type: String, enum: ['admin', 'student', 'teacher'], required: true },
 
     // Verification and Security
@@ -26,5 +28,8 @@ const userSchema = new mongoose.Schema({
 
 }, { timestamps: true } );
 
+// Create User Model with Schema
 const User = mongoose.models.User || mongoose.model('User', userSchema);
+
+// Export User Model
 module.exports = User

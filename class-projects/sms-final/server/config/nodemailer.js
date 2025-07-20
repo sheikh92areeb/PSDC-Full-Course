@@ -1,8 +1,9 @@
+// Import Libraries and Dependencies
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
-
 dotenv.config();
 
+// Create Mail Transporter
 const transporter = nodemailer.createTransport({
     host: 'smtp-relay.brevo.com',
     port: 587,
@@ -12,4 +13,5 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+// Export Transporter
 module.exports = transporter
