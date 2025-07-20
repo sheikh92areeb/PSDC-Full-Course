@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User.js');
 const { transporter } = require('../config/nodemailer.js');
-const { EMAIL_VERIFY_TEMPLATE } = require('../config/emailTemplates.js');
+const { EMAIL_VERIFY_TEMPLATE, PASSWORD_RESET_TEMPLATE } = require('../config/emailTemplates.js');
 
 // GET PAGES CONTROLLERS
 const getLoginPage = (req,res) => res.send("LOGIN PAGE");
@@ -116,6 +116,7 @@ const logoutUser = async (req, res) => {
             httpOnly: true, 
             secure: process.env.NODE_ENV === 'production',
             sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Strict',
+            path: '/',
         });
 
         // Send Response
@@ -147,7 +148,7 @@ const sendVerifyOTP = async (req, res) => {
 
         // Send OTP via Email
         const mailOptions = {
-            from: process.env.SENDER_EMAIL,
+            from: process.env.APP_EMAIL,
             to: user.email,
             subject: "Account Verification OTP",            
             html: EMAIL_VERIFY_TEMPLATE.replace('{{otp}}', otp).replace('{{email}}', user.email)
@@ -203,10 +204,80 @@ const verifyEmail = async (req, res) => {
 };
 
 // 06- Send Reset OTP
-const sendResetOTP = async (req, res) => {};
+const sendResetOTP = async (req, res) => {
+    // Extract email form request body
+    const { email } = req.body;
+
+    // Validate empty field
+    if (!email) return res.status(400).json({ success: false, message: "Email is required" });
+
+    try {
+        // find user by email
+        const user = await User.findOne({email});
+        if (!user) return res.status(404).json({ success: false, message: "User not found" });
+
+        // Generate and set OTP
+        const otp = Math.floor(100000 + Math.random() * 900000).toString(); // 6 digit otp
+        user.resetOtp = otp;
+        user.resetOtpExpiryAt = Date.now() + 15 * 60 * 1000; // 15 minutes
+        await user.save();
+
+        // Send otp via email
+        const mailOptions = {
+            from: process.env.APP_EMAIL,
+            to: user.email,
+            subject: "Password Reset OTP",            
+            html: PASSWORD_RESET_TEMPLATE.replace('{{otp}}', otp).replace('{{email}}', user.email)
+        };
+        await transporter.sendMail(mailOptions);
+
+        // send response
+        return res.status(200).json({ success: true, message: "OTP sent to email" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Server Error" });
+    }
+};
 
 // 07- Reset Password
-const resetPassword = async (req, res) => {};
+const resetPassword = async (req, res) => {
+    // Extract data from request body
+    const { email, otp, newPassword } = req.body;
+
+    // Validate Empty fields
+    if (!email || !otp || !newPassword) return res.status(400).json({ success: false, message: "Missing Details" });
+
+    try {
+        // find user by email
+        const user = await User.findOne({email});
+        if (!user) return res.status(404).json({ success: false, message: "User not found" });
+
+        // Validate OTP
+        if (user.resetOtp === "" || user.resetOtp !== otp) {
+            return res.status(400).json({ success: false, message: "Invalid OTP" });        
+        }
+
+        // Check Expire OTP
+        if (user.resetOtpExpiryAt < Date.now()) {
+            return res.status(400).json({ success: false, message: "OTP expired" });
+        }
+
+        // Hashing and Set new password
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        user.password = hashedPassword;
+        user.resetOtp = "";
+        user.resetOtpExpiryAt = 0;
+        await user.save();
+
+        // send response
+        return res.status(200).json({ success: true, message: "Password reset successfully" });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Server Error" });
+    }
+};
 
 // Exports Functions Controller
 module.exports = {
