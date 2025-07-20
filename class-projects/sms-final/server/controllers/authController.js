@@ -77,18 +77,17 @@ const loginUser = async (req, res) => {
     if (!username || !password) return res.status(400).json({ success: false, message: "Username and Password are Required" });
 
     try{
-        // find user by username
-        const user = await User.findOne({ username });
+        // Find user by username (convert to lowercase for consistency)
+        const user = await User.findOne({ username: username.toLowerCase() });
         if (!user) return res.status(401).json({ success: false, message: "Invalid Username" });
 
         // check Password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(401).json({ success: false, message: "Invalid Password" });
 
-        // Update Last Login
-        const lastLogin = Date.now();
-        user.lastLoginAt = lastLogin;
-        awaituser.save();
+        // Update last login time
+        user.lastLoginAt = new Date();
+        await user.save();
 
         // Generate Token
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
