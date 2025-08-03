@@ -1,4 +1,4 @@
-import Faq from "./components/Faq"
+import Faq from "./components/FAQ"
 import Features from "./components/Features"
 import Footer from "./components/Footer"
 import Hero from "./components/Hero"
