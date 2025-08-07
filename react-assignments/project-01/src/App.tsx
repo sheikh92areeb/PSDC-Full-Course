@@ -1,3 +1,4 @@
+import BlogList from "./components/BlogList"
 import Faq from "./components/FAQ"
 import Features from "./components/Features"
 import Footer from "./components/Footer"
@@ -13,6 +14,7 @@ const App = () => {
       <Features />
       <Faq />
       <Newsletter />
+      <BlogList/>
       <Footer />
     </>
   )
